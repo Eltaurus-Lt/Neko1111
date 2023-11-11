@@ -1,38 +1,50 @@
-:root {
-  --neko-still: url("chrome-extension://__MSG_@@extension_id__/nekos/still.gif"), url("nekos/still.gif");
-  --neko-alert: url("chrome-extension://__MSG_@@extension_id__/nekos/alert.gif"), url("nekos/alert.gif");
-  --neko-yawn: url("chrome-extension://__MSG_@@extension_id__/nekos/yawn.gif"), url("nekos/yawn.gif");
+ :root {
+  --neko-still: url("chrome-extension://__MSG_@@extension_id__/nekos/still.gif"), url("nekos/still.gif"), url("https://webneko.net/white/still.gif");
+  --neko-alert: url("chrome-extension://__MSG_@@extension_id__/nekos/alert.gif"), url("nekos/alert.gif"), url("https://webneko.net/white/alert.gif");
+  --neko-yawn: url("chrome-extension://__MSG_@@extension_id__/nekos/yawn.gif"), url("nekos/yawn.gif"), url("https://webneko.net/white/yawn.gif");
   
-  --neko-run-north-1: url("chrome-extension://__MSG_@@extension_id__/nekos/nrun1.gif"), url("nekos/nrun1.gif");
-  --neko-run-north-2: url("chrome-extension://__MSG_@@extension_id__/nekos/nrun2.gif"), url("nekos/nrun2.gif");
-  --neko-run-northeast-1: url("chrome-extension://__MSG_@@extension_id__/nekos/nerun1.gif"), url("nekos/nerun1.gif");
-  --neko-run-northeast-2: url("chrome-extension://__MSG_@@extension_id__/nekos/nerun2.gif"), url("nekos/nerun2.gif");
-  --neko-run-east-1: url("chrome-extension://__MSG_@@extension_id__/nekos/erun1.gif"), url("nekos/erun1.gif");
-  --neko-run-east-2: url("chrome-extension://__MSG_@@extension_id__/nekos/erun2.gif"), url("nekos/erun2.gif");
-  --neko-run-southeast-1: url("chrome-extension://__MSG_@@extension_id__/nekos/serun1.gif"), url("nekos/serun1.gif");
-  --neko-run-southeast-2: url("chrome-extension://__MSG_@@extension_id__/nekos/serun2.gif"), url("nekos/serun2.gif");
-  --neko-run-south-1: url("chrome-extension://__MSG_@@extension_id__/nekos/srun1.gif"), url("nekos/srun1.gif");
-  --neko-run-south-2: url("chrome-extension://__MSG_@@extension_id__/nekos/srun2.gif"), url("nekos/srun2.gif");
-  --neko-run-southwest-1: url("chrome-extension://__MSG_@@extension_id__/nekos/swrun1.gif"), url("nekos/swrun1.gif");
-  --neko-run-southwest-2: url("chrome-extension://__MSG_@@extension_id__/nekos/swrun2.gif"), url("nekos/swrun2.gif");
-  --neko-run-west-1: url("chrome-extension://__MSG_@@extension_id__/nekos/wrun1.gif"), url("nekos/wrun1.gif");
-  --neko-run-west-2: url("chrome-extension://__MSG_@@extension_id__/nekos/wrun2.gif"), url("nekos/wrun2.gif");
-  --neko-run-northwest-1: url("chrome-extension://__MSG_@@extension_id__/nekos/nwrun1.gif"), url("nekos/nwrun1.gif");
-  --neko-run-northwest-2: url("chrome-extension://__MSG_@@extension_id__/nekos/nwrun2.gif"), url("nekos/nwrun2.gif");
+  --neko-run-north-1: url("chrome-extension://__MSG_@@extension_id__/nekos/nrun1.gif"), url("nekos/nrun1.gif"), url("https://webneko.net/white/nrun1.gif");
+  --neko-run-north-2: url("chrome-extension://__MSG_@@extension_id__/nekos/nrun2.gif"), url("nekos/nrun2.gif"), url("https://webneko.net/white/nrun2.gif");
+  --neko-run-northeast-1: url("chrome-extension://__MSG_@@extension_id__/nekos/nerun1.gif"), url("nekos/nerun1.gif"), url("https://webneko.net/white/nerun1.gif");
+  --neko-run-northeast-2: url("chrome-extension://__MSG_@@extension_id__/nekos/nerun2.gif"), url("nekos/nerun2.gif"), url("https://webneko.net/white/nerun2.gif");
+  --neko-run-east-1: url("chrome-extension://__MSG_@@extension_id__/nekos/erun1.gif"), url("nekos/erun1.gif"), url("https://webneko.net/white/erun1.gif");
+  --neko-run-east-2: url("chrome-extension://__MSG_@@extension_id__/nekos/erun2.gif"), url("nekos/erun2.gif"), url("https://webneko.net/white/erun2.gif");
+  --neko-run-southeast-1: url("chrome-extension://__MSG_@@extension_id__/nekos/serun1.gif"), url("nekos/serun1.gif"), url("https://webneko.net/white/serun1.gif");
+  --neko-run-southeast-2: url("chrome-extension://__MSG_@@extension_id__/nekos/serun2.gif"), url("nekos/serun2.gif"), url("https://webneko.net/white/serun2.gif");
+  --neko-run-south-1: url("chrome-extension://__MSG_@@extension_id__/nekos/srun1.gif"), url("nekos/srun1.gif"), url("https://webneko.net/white/srun1.gif");
+  --neko-run-south-2: url("chrome-extension://__MSG_@@extension_id__/nekos/srun2.gif"), url("nekos/srun2.gif"), url("https://webneko.net/white/srun2.gif");
+  --neko-run-southwest-1: url("chrome-extension://__MSG_@@extension_id__/nekos/swrun1.gif"), url("nekos/swrun1.gif"), url("https://webneko.net/white/swrun1.gif");
+  --neko-run-southwest-2: url("chrome-extension://__MSG_@@extension_id__/nekos/swrun2.gif"), url("nekos/swrun2.gif"), url("https://webneko.net/white/swrun2.gif");
+  --neko-run-west-1: url("chrome-extension://__MSG_@@extension_id__/nekos/wrun1.gif"), url("nekos/wrun1.gif"), url("https://webneko.net/white/wrun1.gif");
+  --neko-run-west-2: url("chrome-extension://__MSG_@@extension_id__/nekos/wrun2.gif"), url("nekos/wrun2.gif"), url("https://webneko.net/white/wrun2.gif");
+  --neko-run-northwest-1: url("chrome-extension://__MSG_@@extension_id__/nekos/nwrun1.gif"), url("nekos/nwrun1.gif"), url("https://webneko.net/white/nwrun1.gif");
+  --neko-run-northwest-2: url("chrome-extension://__MSG_@@extension_id__/nekos/nwrun2.gif"), url("nekos/nwrun2.gif"), url("https://webneko.net/white/nwrun2.gif");
   
-  --neko-scratch-north-1: url("chrome-extension://__MSG_@@extension_id__/nekos/nscratch1.gif"), url("nekos/nscratch1.gif");
-  --neko-scratch-north-2: url("chrome-extension://__MSG_@@extension_id__/nekos/nscratch2.gif"), url("nekos/nscratch2.gif");
-  --neko-scratch-east-1: url("chrome-extension://__MSG_@@extension_id__/nekos/escratch1.gif"), url("nekos/escratch1.gif");
-  --neko-scratch-east-2: url("chrome-extension://__MSG_@@extension_id__/nekos/escratch2.gif"), url("nekos/escratch2.gif");
-  --neko-scratch-south-1: url("chrome-extension://__MSG_@@extension_id__/nekos/sscratch1.gif"), url("nekos/sscratch1.gif");
-  --neko-scratch-south-2: url("chrome-extension://__MSG_@@extension_id__/nekos/sscratch2.gif"), url("nekos/sscratch2.gif");
-  --neko-scratch-west-1: url("chrome-extension://__MSG_@@extension_id__/nekos/wscratch1.gif"), url("nekos/wscratch1.gif");
-  --neko-scratch-west-2: url("chrome-extension://__MSG_@@extension_id__/nekos/wscratch2.gif"), url("nekos/wscratch2.gif");
+  --neko-scratch-north-1: url("chrome-extension://__MSG_@@extension_id__/nekos/nscratch1.gif"), url("nekos/nscratch1.gif"), url("https://webneko.net/white/nscratch1.gif");
+  --neko-scratch-north-2: url("chrome-extension://__MSG_@@extension_id__/nekos/nscratch2.gif"), url("nekos/nscratch2.gif"), url("https://webneko.net/white/nscratch2.gif");
+  --neko-scratch-east-1: url("chrome-extension://__MSG_@@extension_id__/nekos/escratch1.gif"), url("nekos/escratch1.gif"), url("https://webneko.net/white/escratch1.gif");
+  --neko-scratch-east-2: url("chrome-extension://__MSG_@@extension_id__/nekos/escratch2.gif"), url("nekos/escratch2.gif"), url("https://webneko.net/white/escratch2.gif");
+  --neko-scratch-south-1: url("chrome-extension://__MSG_@@extension_id__/nekos/sscratch1.gif"), url("nekos/sscratch1.gif"), url("https://webneko.net/white/sscratch1.gif");
+  --neko-scratch-south-2: url("chrome-extension://__MSG_@@extension_id__/nekos/sscratch2.gif"), url("nekos/sscratch2.gif"), url("https://webneko.net/white/sscratch2.gif");
+  --neko-scratch-west-1: url("chrome-extension://__MSG_@@extension_id__/nekos/wscratch1.gif"), url("nekos/wscratch1.gif"), url("https://webneko.net/white/wscratch1.gif");
+  --neko-scratch-west-2: url("chrome-extension://__MSG_@@extension_id__/nekos/wscratch2.gif"), url("nekos/wscratch2.gif"), url("https://webneko.net/white/wscratch2.gif");
   
-  --neko-itch-1: url("chrome-extension://__MSG_@@extension_id__/nekos/itch1.gif"), url("nekos/itch1.gif");
-  --neko-itch-2: url("chrome-extension://__MSG_@@extension_id__/nekos/itch2.gif"), url("nekos/itch2.gif");
-  --neko-sleep-1: url("chrome-extension://__MSG_@@extension_id__/nekos/sleep1.gif"), url("nekos/sleep1.gif");
-  --neko-sleep-2: url("chrome-extension://__MSG_@@extension_id__/nekos/sleep2.gif"), url("nekos/sleep2.gif");
+  --neko-itch-1: url("chrome-extension://__MSG_@@extension_id__/nekos/itch1.gif"), url("nekos/itch1.gif"), url("https://webneko.net/white/itch1.gif");
+  --neko-itch-2: url("chrome-extension://__MSG_@@extension_id__/nekos/itch2.gif"), url("nekos/itch2.gif"), url("https://webneko.net/white/itch2.gif");
+  --neko-sleep-1: url("chrome-extension://__MSG_@@extension_id__/nekos/sleep1.gif"), url("nekos/sleep1.gif"), url("https://webneko.net/white/sleep1.gif");
+  --neko-sleep-2: url("chrome-extension://__MSG_@@extension_id__/nekos/sleep2.gif"), url("nekos/sleep2.gif"), url("https://webneko.net/white/sleep2.gif");
+   
+  --baloon-purple-1: url("chrome-extension://__MSG_@@extension_id__/baloons/purple-l.gif"), url("baloons/purple-l.gif"), url("https://raw.githubusercontent.com/Eltaurus-Lt/Neko1111/main/Extension/baloons/purple-l.gif");
+  --baloon-purple-2: url("chrome-extension://__MSG_@@extension_id__/baloons/purple-c.gif"), url("baloons/purple-c.gif"), url("https://raw.githubusercontent.com/Eltaurus-Lt/Neko1111/main/Extension/baloons/purple-c.gif");
+  --baloon-purple-3: url("chrome-extension://__MSG_@@extension_id__/baloons/purple-r.gif"), url("baloons/purple-r.gif"), url("https://raw.githubusercontent.com/Eltaurus-Lt/Neko1111/main/Extension/baloons/purple-r.gif");
+  --baloon-yellow-1: url("chrome-extension://__MSG_@@extension_id__/baloons/yellow-l.gif"), url("baloons/yellow-l.gif"), url("https://raw.githubusercontent.com/Eltaurus-Lt/Neko1111/main/Extension/baloons/yellow-l.gif");
+  --baloon-yellow-2: url("chrome-extension://__MSG_@@extension_id__/baloons/yellow-c.gif"), url("baloons/yellow-c.gif"), url("https://raw.githubusercontent.com/Eltaurus-Lt/Neko1111/main/Extension/baloons/yellow-c.gif");
+  --baloon-yellow-3: url("chrome-extension://__MSG_@@extension_id__/baloons/yellow-r.gif"), url("baloons/yellow-r.gif"), url("https://raw.githubusercontent.com/Eltaurus-Lt/Neko1111/main/Extension/baloons/yellow-r.gif");
+  --baloon-white-1: url("chrome-extension://__MSG_@@extension_id__/baloons/white-l.gif"), url("baloons/white-l.gif"), url("https://raw.githubusercontent.com/Eltaurus-Lt/Neko1111/main/Extension/baloons/white-l.gif");
+  --baloon-white-2: url("chrome-extension://__MSG_@@extension_id__/baloons/white-c.gif"), url("baloons/white-c.gif"), url("https://raw.githubusercontent.com/Eltaurus-Lt/Neko1111/main/Extension/baloons/white-c.gif");
+  --baloon-white-3: url("chrome-extension://__MSG_@@extension_id__/baloons/white-r.gif"), url("baloons/white-r.gif"), url("https://raw.githubusercontent.com/Eltaurus-Lt/Neko1111/main/Extension/baloons/white-r.gif");
+   
+  --baloon-pop: url("chrome-extension://__MSG_@@extension_id__/baloons/pop.gif"), url("baloons/pop.gif"), url("https://raw.githubusercontent.com/Eltaurus-Lt/Neko1111/main/Extension/baloons/pop.gif");   
   
   --frame-1: var(--neko-alert);
   --frame-2: var(--neko-still);
@@ -137,4 +149,49 @@
   --frame-1: var(--neko-alert);
   animation-iteration-count: 1;
   animation-duration: 1.5s;
+}
+
+
+
+.baloon {
+  width: 64px;
+  height: 64px;
+  left: 0;
+  top: 0;
+  background: var(--baloon-purple-2); 
+  background-size: cover;
+  position: absolute;
+  image-rendering: pixelated;
+  animation: baloonLoop 3s step-end infinite; 
+  z-index: 1100;
+}
+
+@keyframes baloonLoop {
+  0%,50%,100% {
+    background-image: var(--frame-c);
+  }
+  25% {
+    background-image: var(--frame-l);
+  }
+  75% {
+    background-image: var(--frame-r);
+  }
+}
+
+.baloon.purple {
+  --frame-l: var(--baloon-purple-1);
+  --frame-c: var(--baloon-purple-2);
+  --frame-r: var(--baloon-purple-3);
+}
+
+.baloon.yellow {
+  --frame-l: var(--baloon-yellow-1);
+  --frame-c: var(--baloon-yellow-2);
+  --frame-r: var(--baloon-yellow-3);
+}
+
+.baloon.white {
+  --frame-l: var(--baloon-white-1);
+  --frame-c: var(--baloon-white-2);
+  --frame-r: var(--baloon-white-3);
 }
