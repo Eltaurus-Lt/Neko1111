@@ -1,0 +1,140 @@
+:root {
+  --neko-still: url("chrome-extension://__MSG_@@extension_id__/nekos/still.gif");
+  --neko-alert: url("chrome-extension://__MSG_@@extension_id__/nekos/alert.gif");
+  --neko-yawn: url("chrome-extension://__MSG_@@extension_id__/nekos/yawn.gif");
+  
+  --neko-run-north-1: url("chrome-extension://__MSG_@@extension_id__/nekos/nrun1.gif");
+  --neko-run-north-2: url("chrome-extension://__MSG_@@extension_id__/nekos/nrun2.gif");
+  --neko-run-northeast-1: url("chrome-extension://__MSG_@@extension_id__/nekos/nerun1.gif");
+  --neko-run-northeast-2: url("chrome-extension://__MSG_@@extension_id__/nekos/nerun2.gif");
+  --neko-run-east-1: url("chrome-extension://__MSG_@@extension_id__/nekos/erun1.gif");
+  --neko-run-east-2: url("chrome-extension://__MSG_@@extension_id__/nekos/erun2.gif");
+  --neko-run-southeast-1: url("chrome-extension://__MSG_@@extension_id__/nekos/serun1.gif");
+  --neko-run-southeast-2: url("chrome-extension://__MSG_@@extension_id__/nekos/serun2.gif");
+  --neko-run-south-1: url("chrome-extension://__MSG_@@extension_id__/nekos/srun1.gif");
+  --neko-run-south-2: url("chrome-extension://__MSG_@@extension_id__/nekos/srun2.gif");
+  --neko-run-southwest-1: url("chrome-extension://__MSG_@@extension_id__/nekos/swrun1.gif");
+  --neko-run-southwest-2: url("chrome-extension://__MSG_@@extension_id__/nekos/swrun2.gif");
+  --neko-run-west-1: url("chrome-extension://__MSG_@@extension_id__/nekos/wrun1.gif");
+  --neko-run-west-2: url("chrome-extension://__MSG_@@extension_id__/nekos/wrun2.gif");
+  --neko-run-northwest-1: url("chrome-extension://__MSG_@@extension_id__/nekos/nwrun1.gif");
+  --neko-run-northwest-2: url("chrome-extension://__MSG_@@extension_id__/nekos/nwrun2.gif");
+  
+  --neko-scratch-north-1: url("chrome-extension://__MSG_@@extension_id__/nekos/nscratch1.gif");
+  --neko-scratch-north-2: url("chrome-extension://__MSG_@@extension_id__/nekos/nscratch2.gif");
+  --neko-scratch-east-1: url("chrome-extension://__MSG_@@extension_id__/nekos/escratch1.gif");
+  --neko-scratch-east-2: url("chrome-extension://__MSG_@@extension_id__/nekos/escratch2.gif");
+  --neko-scratch-south-1: url("chrome-extension://__MSG_@@extension_id__/nekos/sscratch1.gif");
+  --neko-scratch-south-2: url("chrome-extension://__MSG_@@extension_id__/nekos/sscratch2.gif");
+  --neko-scratch-west-1: url("chrome-extension://__MSG_@@extension_id__/nekos/wscratch1.gif");
+  --neko-scratch-west-2: url("chrome-extension://__MSG_@@extension_id__/nekos/wscratch2.gif");
+  
+  --neko-itch-1: url("chrome-extension://__MSG_@@extension_id__/nekos/itch1.gif");
+  --neko-itch-2: url("chrome-extension://__MSG_@@extension_id__/nekos/itch2.gif");
+  --neko-sleep-1: url("chrome-extension://__MSG_@@extension_id__/nekos/sleep1.gif");
+  --neko-sleep-2: url("chrome-extension://__MSG_@@extension_id__/nekos/sleep2.gif");
+  
+  --frame-1: var(--neko-alert);
+  --frame-2: var(--neko-still);
+}
+
+
+@keyframes nekoLoop {
+  0%,100% {
+    background-image: var(--frame-1);
+  }
+  50% {
+    background-image: var(--frame-2);
+  }
+}
+
+#neko {
+  width: 64px;
+  height: 64px;
+  left: 0;
+  top: 0;
+  background: var(--neko-still); 
+  background-size: cover;
+  position: absolute;
+  image-rendering: pixelated;
+  animation: nekoLoop .5s step-end infinite; 
+  z-index: 1000;
+}
+#neko:hover {
+  cursor: pointer;
+}
+
+#neko[data-state="still"] {
+  animation: none;
+}
+
+#neko[data-state="run"][data-dir="n"] {
+  --frame-1: var(--neko-run-north-1);
+  --frame-2: var(--neko-run-north-2);
+}
+#neko[data-state="run"][data-dir="ne"] {
+  --frame-1: var(--neko-run-northeast-1);
+  --frame-2: var(--neko-run-northeast-2);
+}
+#neko[data-state="run"][data-dir="e"] {
+  --frame-1: var(--neko-run-east-1);
+  --frame-2: var(--neko-run-east-2);
+}
+#neko[data-state="run"][data-dir="se"] {
+  --frame-1: var(--neko-run-southeast-1);
+  --frame-2: var(--neko-run-southeast-2);
+}
+#neko[data-state="run"][data-dir="s"] {
+  --frame-1: var(--neko-run-south-1);
+  --frame-2: var(--neko-run-south-2);
+}
+#neko[data-state="run"][data-dir="sw"] {
+  --frame-1: var(--neko-run-southwest-1);
+  --frame-2: var(--neko-run-southwest-2);
+}
+#neko[data-state="run"][data-dir="w"] {
+  --frame-1: var(--neko-run-west-1);
+  --frame-2: var(--neko-run-west-2);
+}
+#neko[data-state="run"][data-dir="nw"] {
+  --frame-1: var(--neko-run-northwest-1);
+  --frame-2: var(--neko-run-northwest-2);
+}
+
+#neko[data-state="scratch"][data-dir^="n"] {
+  --frame-1: var(--neko-scratch-north-1);
+  --frame-2: var(--neko-scratch-north-2);
+}
+#neko[data-state="scratch"][data-dir^="s"] {
+  --frame-1: var(--neko-scratch-south-1);
+  --frame-2: var(--neko-scratch-south-2);
+}
+#neko[data-state="scratch"][data-dir$="e"] {
+  --frame-1: var(--neko-scratch-east-1);
+  --frame-2: var(--neko-scratch-east-2);
+}
+#neko[data-state="scratch"][data-dir$="w"] {
+  --frame-1: var(--neko-scratch-west-1);
+  --frame-2: var(--neko-scratch-west-2);
+}
+
+#neko[data-state="sleep"] {
+  --frame-1: var(--neko-sleep-1);
+  --frame-2: var(--neko-sleep-2);
+  animation-duration: 2s;
+}
+#neko[data-state="itch"] {
+  --frame-1: var(--neko-itch-1);
+  --frame-2: var(--neko-itch-2);
+}
+
+#neko[data-state="yawn"] {
+  --frame-1: var(--neko-yawn);
+  animation-iteration-count: 1;
+  animation-duration: 4s;
+}
+#neko[data-state="alert"] {
+  --frame-1: var(--neko-alert);
+  animation-iteration-count: 1;
+  animation-duration: 1.5s;
+}
