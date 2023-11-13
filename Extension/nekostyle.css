@@ -71,8 +71,6 @@
   image-rendering: pixelated;
   animation: nekoLoop .5s step-end infinite; 
   z-index: 1000;
-}
-#neko:hover {
   cursor: pointer;
 }
 
@@ -164,6 +162,16 @@
   image-rendering: pixelated;
   animation: baloonLoop 3s step-end infinite; 
   z-index: 1100;
+  cursor: pointer;
+}
+
+/* .baloon.target {
+  border: solid red 2px;
+} */
+
+.baloon.pop {
+  animation: none;
+  background-image: var(--baloon-pop);
 }
 
 @keyframes baloonLoop {
