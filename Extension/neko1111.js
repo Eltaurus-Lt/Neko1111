@@ -6,9 +6,11 @@ const step = 12;
 const blnStep = 6;
 const baloonFreq = 0.02;
 const spf = 100;
+const mouseRange = 6000;
 let posX, posY;
-let targetX, targetY;
+let targetX, targetY, target, mouseX, mouseY;
 let state, boredom, fatigue;
+
 
 function nekoInit() {
   posX = 100;
@@ -16,6 +18,7 @@ function nekoInit() {
   boredom = 0;
   fatigue = 0;
   state = "still";
+  target = "mouse";
   
   neko.style.transform = "translate(" + posX + "px," + posY  + "px)";
   neko.setAttribute('data-state', state);
@@ -29,7 +32,27 @@ function switchState(newState) {
   boredom = 0;
 }
 
+function popBaloon(baloon) {
+  baloon.classList.add('pop');
+  setTimeout(() => {
+    baloon.parentNode.removeChild(baloon);
+  }, "500");
+}
+
 function moveTowardsTarget() {
+  
+  if (target === "mouse") {
+    targetX = mouseX;
+    targetY = mouseY;
+  } else if (target && typeof(target) != "string" && document.contains(target)) {
+    let xy = getBaloonXY(target);
+    targetX = xy[0];
+    targetY = xy[1];
+  } else {
+    targetX = 100;
+    targetY = 100;
+    switchState("still");
+  }
   
   let targetVec = [targetX - posX, targetY - posY];
   let alpha = Math.atan2(targetVec[1], targetVec[0]);
@@ -60,12 +83,20 @@ function moveTowardsTarget() {
     neko.setAttribute('data-dir', "w"); 
   }
   
-  if (targetVec[0] * targetVec[0] + targetVec[1] * targetVec[1] > 6000) {
+  let range = 17 * step * step;
+  if (target === "mouse") {
+    range = mouseRange;
+  }
+  
+  if (targetVec[0] * targetVec[0] + targetVec[1] * targetVec[1] > range) {
     posX += step * Math.cos(alpha);
     posY += step * Math.sin(alpha);
     neko.style.transform = "translate(calc(" + posX + "px - 50%) , calc(" + posY  + "px - 50%))";
     
   } else {
+    if (target != "mouse" && document.contains(target)) {
+      popBaloon(target);
+    }
     switchState("still");
   }
   
@@ -81,14 +112,18 @@ function getBaloonXY(bln) {
 }
 
 document.addEventListener('mousemove', (e) => {
-  targetX = e.pageX;
-  targetY = e.pageY;
+  mouseX = e.pageX;
+  mouseY = e.pageY;
   if (state === "yawn" || state === "itch" || state === "still") {
+    target = "mouse";
     switchState("alert");
   }
 });
 
 function nekoLoop() {
+  let baloons = document.getElementsByClassName("baloon");
+//  console.log(target);
+  
   boredom += spf;
   
   switch (state) {
@@ -97,11 +132,16 @@ function nekoLoop() {
       fatigue += spf;
       break;
    case "still":
-      if (fatigue > 5000 && boredom > 5000) {
+      if (fatigue > 12000 && boredom > 5000) {
         switchState("yawn");
       };
       if (boredom > 5000) {
-        switchState("itch");
+        if (baloons && Math.random() < .9) {
+          target = "";
+          switchState("alert");
+        } else {
+          switchState("itch");
+        }
       };
       break;
    case "itch": 
@@ -125,14 +165,30 @@ function nekoLoop() {
         switchState("yawn");
       }
      break;
-  case "alert":
+  case "alert":    
       if (boredom > 1500) {
-        switchState("run");
+        if (target != "mouse" || ((posX - mouseX) * (posX - mouseX) + (posY - mouseY) * (posY - mouseY) < 2 * mouseRange)) {
+          if (Math.random() < 0.1 && ((posX - mouseX) * (posX - mouseX) + (posY - mouseY) * (posY - mouseY) > 2 * mouseRange)) {
+          target = "mouse";
+        } else if (baloons && baloons.length > 0) {
+          target = Array.from(baloons)[Math.floor(Math.random() * baloons.length)];
+          Array.from(baloons).forEach( bl => bl.classList.remove('target'));
+          target.classList.add('target');
+        } else {
+          target = "";
+        }
+      }
+        if (target !== "") {
+          switchState("run");
+        } else {
+          switchState("still");
+        }
       }
       break;
   default:
       
   }
+ 
   
   //baloonLoop
   if (Math.random() < baloonFreq) {
@@ -147,27 +203,27 @@ function nekoLoop() {
     } else {
       newBln.classList.add('purple');
     }
-    newBln.style.transform = "translate(" + Math.round(Math.random() * window.innerWidth) + "px, " + (window.innerHeight + 100) + "px )";
+    newBln.style.transform = "translate(" + Math.round(Math.random() * window.innerWidth) + "px, " + (window.innerHeight + 16) + "px )";
     newBln.style.left = "-16px";
     newBln.style.top = "-16px";
     document.children[0].appendChild(newBln);
-    
+    newBln.onclick = function () {popBaloon(this)};
     
   }
-  baloons = document.getElementsByClassName("baloon");
-  console.log(baloons.length);
+
+  //console.log(baloons.length);
   Array.from(baloons).forEach( bln => {
     let xy = getBaloonXY(bln);
     if (xy[1] <= blnStep) {
       bln.parentNode.removeChild(bln);
-    } else {
+    } else if (!bln.classList.contains('pop')) { 
       bln.style.transform = "translate(" + xy[0] + "px, " + (xy[1] - blnStep) + "px )";
     }
   });
   
 }
 
-neko.onclick = function () {switchState("alert");};
+neko.onclick = function () {target = "mouse"; switchState("alert");};
 setInterval(nekoLoop, spf);
 
 
