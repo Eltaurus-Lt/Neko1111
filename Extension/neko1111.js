@@ -20,7 +20,7 @@ function nekoInit() {
   state = "still";
   target = "mouse";
   
-  neko.style.transform = "translate(" + posX + "px," + posY  + "px)";
+  neko.style.transform = "translate(calc(" + posX + "px - 50%) , calc(" + posY  + "px - 50%))";
   neko.setAttribute('data-state', state);
 };
 nekoInit();
