@@ -34,17 +34,17 @@
   --neko-sleep-1: url("chrome-extension://__MSG_@@extension_id__/nekos/sleep1.gif"), url("nekos/sleep1.gif"), url("https://webneko.net/white/sleep1.gif");
   --neko-sleep-2: url("chrome-extension://__MSG_@@extension_id__/nekos/sleep2.gif"), url("nekos/sleep2.gif"), url("https://webneko.net/white/sleep2.gif");
    
-  --baloon-purple-1: url("chrome-extension://__MSG_@@extension_id__/baloons/purple-l.gif"), url("baloons/purple-l.gif"), url("https://raw.githubusercontent.com/Eltaurus-Lt/Neko1111/main/Extension/baloons/purple-l.gif");
-  --baloon-purple-2: url("chrome-extension://__MSG_@@extension_id__/baloons/purple-c.gif"), url("baloons/purple-c.gif"), url("https://raw.githubusercontent.com/Eltaurus-Lt/Neko1111/main/Extension/baloons/purple-c.gif");
-  --baloon-purple-3: url("chrome-extension://__MSG_@@extension_id__/baloons/purple-r.gif"), url("baloons/purple-r.gif"), url("https://raw.githubusercontent.com/Eltaurus-Lt/Neko1111/main/Extension/baloons/purple-r.gif");
-  --baloon-yellow-1: url("chrome-extension://__MSG_@@extension_id__/baloons/yellow-l.gif"), url("baloons/yellow-l.gif"), url("https://raw.githubusercontent.com/Eltaurus-Lt/Neko1111/main/Extension/baloons/yellow-l.gif");
-  --baloon-yellow-2: url("chrome-extension://__MSG_@@extension_id__/baloons/yellow-c.gif"), url("baloons/yellow-c.gif"), url("https://raw.githubusercontent.com/Eltaurus-Lt/Neko1111/main/Extension/baloons/yellow-c.gif");
-  --baloon-yellow-3: url("chrome-extension://__MSG_@@extension_id__/baloons/yellow-r.gif"), url("baloons/yellow-r.gif"), url("https://raw.githubusercontent.com/Eltaurus-Lt/Neko1111/main/Extension/baloons/yellow-r.gif");
-  --baloon-white-1: url("chrome-extension://__MSG_@@extension_id__/baloons/white-l.gif"), url("baloons/white-l.gif"), url("https://raw.githubusercontent.com/Eltaurus-Lt/Neko1111/main/Extension/baloons/white-l.gif");
-  --baloon-white-2: url("chrome-extension://__MSG_@@extension_id__/baloons/white-c.gif"), url("baloons/white-c.gif"), url("https://raw.githubusercontent.com/Eltaurus-Lt/Neko1111/main/Extension/baloons/white-c.gif");
-  --baloon-white-3: url("chrome-extension://__MSG_@@extension_id__/baloons/white-r.gif"), url("baloons/white-r.gif"), url("https://raw.githubusercontent.com/Eltaurus-Lt/Neko1111/main/Extension/baloons/white-r.gif");
+  --balloon-purple-1: url("chrome-extension://__MSG_@@extension_id__/balloons/purple-l.gif"), url("balloons/purple-l.gif"), url("https://raw.githubusercontent.com/Eltaurus-Lt/Neko1111/main/Extension/balloons/purple-l.gif");
+  --balloon-purple-2: url("chrome-extension://__MSG_@@extension_id__/balloons/purple-c.gif"), url("balloons/purple-c.gif"), url("https://raw.githubusercontent.com/Eltaurus-Lt/Neko1111/main/Extension/balloons/purple-c.gif");
+  --balloon-purple-3: url("chrome-extension://__MSG_@@extension_id__/balloons/purple-r.gif"), url("balloons/purple-r.gif"), url("https://raw.githubusercontent.com/Eltaurus-Lt/Neko1111/main/Extension/balloons/purple-r.gif");
+  --balloon-yellow-1: url("chrome-extension://__MSG_@@extension_id__/balloons/yellow-l.gif"), url("balloons/yellow-l.gif"), url("https://raw.githubusercontent.com/Eltaurus-Lt/Neko1111/main/Extension/balloons/yellow-l.gif");
+  --balloon-yellow-2: url("chrome-extension://__MSG_@@extension_id__/balloons/yellow-c.gif"), url("balloons/yellow-c.gif"), url("https://raw.githubusercontent.com/Eltaurus-Lt/Neko1111/main/Extension/balloons/yellow-c.gif");
+  --balloon-yellow-3: url("chrome-extension://__MSG_@@extension_id__/balloons/yellow-r.gif"), url("balloons/yellow-r.gif"), url("https://raw.githubusercontent.com/Eltaurus-Lt/Neko1111/main/Extension/balloons/yellow-r.gif");
+  --balloon-white-1: url("chrome-extension://__MSG_@@extension_id__/balloons/white-l.gif"), url("balloons/white-l.gif"), url("https://raw.githubusercontent.com/Eltaurus-Lt/Neko1111/main/Extension/balloons/white-l.gif");
+  --balloon-white-2: url("chrome-extension://__MSG_@@extension_id__/balloons/white-c.gif"), url("balloons/white-c.gif"), url("https://raw.githubusercontent.com/Eltaurus-Lt/Neko1111/main/Extension/balloons/white-c.gif");
+  --balloon-white-3: url("chrome-extension://__MSG_@@extension_id__/balloons/white-r.gif"), url("balloons/white-r.gif"), url("https://raw.githubusercontent.com/Eltaurus-Lt/Neko1111/main/Extension/balloons/white-r.gif");
    
-  --baloon-pop: url("chrome-extension://__MSG_@@extension_id__/baloons/pop.gif"), url("baloons/pop.gif"), url("https://raw.githubusercontent.com/Eltaurus-Lt/Neko1111/main/Extension/baloons/pop.gif");   
+  --balloon-pop: url("chrome-extension://__MSG_@@extension_id__/balloons/pop.gif"), url("balloons/pop.gif"), url("https://raw.githubusercontent.com/Eltaurus-Lt/Neko1111/main/Extension/balloons/pop.gif");   
   
   --frame-1: var(--neko-alert);
   --frame-2: var(--neko-still);
@@ -151,30 +151,30 @@
 
 
 
-.baloon {
+.balloon {
   width: 64px;
   height: 64px;
   left: 0;
   top: 0;
-  background: var(--baloon-purple-2); 
+  background: var(--balloon-purple-2); 
   background-size: cover;
   position: absolute;
   image-rendering: pixelated;
-  animation: baloonLoop 3s step-end infinite; 
+  animation: balloonLoop 3s step-end infinite; 
   z-index: 1100;
   cursor: pointer;
 }
 
-/* .baloon.target {
+/* .balloon.target {
   border: solid red 2px;
 } */
 
-.baloon.pop {
+.balloon.pop {
   animation: none;
-  background-image: var(--baloon-pop);
+  background-image: var(--balloon-pop);
 }
 
-@keyframes baloonLoop {
+@keyframes balloonLoop {
   0%,50%,100% {
     background-image: var(--frame-c);
   }
@@ -186,20 +186,20 @@
   }
 }
 
-.baloon.purple {
-  --frame-l: var(--baloon-purple-1);
-  --frame-c: var(--baloon-purple-2);
-  --frame-r: var(--baloon-purple-3);
+.balloon.purple {
+  --frame-l: var(--balloon-purple-1);
+  --frame-c: var(--balloon-purple-2);
+  --frame-r: var(--balloon-purple-3);
 }
 
-.baloon.yellow {
-  --frame-l: var(--baloon-yellow-1);
-  --frame-c: var(--baloon-yellow-2);
-  --frame-r: var(--baloon-yellow-3);
+.balloon.yellow {
+  --frame-l: var(--balloon-yellow-1);
+  --frame-c: var(--balloon-yellow-2);
+  --frame-r: var(--balloon-yellow-3);
 }
 
-.baloon.white {
-  --frame-l: var(--baloon-white-1);
-  --frame-c: var(--baloon-white-2);
-  --frame-r: var(--baloon-white-3);
+.balloon.white {
+  --frame-l: var(--balloon-white-1);
+  --frame-c: var(--balloon-white-2);
+  --frame-r: var(--balloon-white-3);
 }

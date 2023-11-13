@@ -4,7 +4,7 @@ document.children[0].appendChild(neko);
 
 const step = 12;
 const blnStep = 6;
-const baloonFreq = 0.02;
+const balloonFreq = 0.02;
 const spf = 100;
 const mouseRange = 6000;
 let posX, posY;
@@ -32,10 +32,10 @@ function switchState(newState) {
   boredom = 0;
 }
 
-function popBaloon(baloon) {
-  baloon.classList.add('pop');
+function popBalloon(balloon) {
+  balloon.classList.add('pop');
   setTimeout(() => {
-    baloon.parentNode.removeChild(baloon);
+    balloon.parentNode.removeChild(balloon);
   }, "500");
 }
 
@@ -45,7 +45,7 @@ function moveTowardsTarget() {
     targetX = mouseX;
     targetY = mouseY;
   } else if (target && typeof(target) != "string" && document.contains(target)) {
-    let xy = getBaloonXY(target);
+    let xy = getBalloonXY(target);
     targetX = xy[0];
     targetY = xy[1];
   } else {
@@ -95,7 +95,7 @@ function moveTowardsTarget() {
     
   } else {
     if (target != "mouse" && document.contains(target)) {
-      popBaloon(target);
+      popBalloon(target);
     }
     switchState("still");
   }
@@ -103,7 +103,7 @@ function moveTowardsTarget() {
   
 }
 
-function getBaloonXY(bln) {
+function getBalloonXY(bln) {
   var matches = bln.style.transform.match(/\d+/g);
   let xy = matches.map(function(match) {
     return parseInt(match, 10); 
@@ -121,7 +121,7 @@ document.addEventListener('mousemove', (e) => {
 });
 
 function nekoLoop() {
-  let baloons = document.getElementsByClassName("baloon");
+  let balloons = document.getElementsByClassName("balloon");
 //  console.log(target);
   
   boredom += spf;
@@ -136,7 +136,7 @@ function nekoLoop() {
         switchState("yawn");
       };
       if (boredom > 5000) {
-        if (baloons && Math.random() < .9) {
+        if (balloons && Math.random() < .9) {
           target = "";
           switchState("alert");
         } else {
@@ -170,9 +170,9 @@ function nekoLoop() {
         if (target != "mouse" || ((posX - mouseX) * (posX - mouseX) + (posY - mouseY) * (posY - mouseY) < 2 * mouseRange)) {
           if (Math.random() < 0.1 && ((posX - mouseX) * (posX - mouseX) + (posY - mouseY) * (posY - mouseY) > 2 * mouseRange)) {
           target = "mouse";
-        } else if (baloons && baloons.length > 0) {
-          target = Array.from(baloons)[Math.floor(Math.random() * baloons.length)];
-          Array.from(baloons).forEach( bl => bl.classList.remove('target'));
+        } else if (balloons && balloons.length > 0) {
+          target = Array.from(balloons)[Math.floor(Math.random() * balloons.length)];
+          Array.from(balloons).forEach( bl => bl.classList.remove('target'));
           target.classList.add('target');
         } else {
           target = "";
@@ -190,11 +190,11 @@ function nekoLoop() {
   }
  
   
-  //baloonLoop
-  if (Math.random() < baloonFreq) {
+  //balloonLoop
+  if (Math.random() < balloonFreq) {
     //console.log('~O');
     let newBln = document.createElement("div");
-    newBln.classList.add('baloon');
+    newBln.classList.add('balloon');
     let prob = Math.random();
     if (prob < .3) {
       newBln.classList.add('yellow');
@@ -203,17 +203,17 @@ function nekoLoop() {
     } else {
       newBln.classList.add('purple');
     }
-    newBln.style.transform = "translate(" + Math.round(Math.random() * window.innerWidth) + "px, " + (window.innerHeight + 16) + "px )";
+    newBln.style.transform = "translate(" + Math.round(window.pageXOffset + Math.random() * window.innerWidth) + "px, " + (window.pageYOffset + window.innerHeight + 16) + "px )";
     newBln.style.left = "-16px";
     newBln.style.top = "-16px";
     document.children[0].appendChild(newBln);
-    newBln.onclick = function () {popBaloon(this)};
+    newBln.onclick = function () {popBalloon(this)};
     
   }
 
-  //console.log(baloons.length);
-  Array.from(baloons).forEach( bln => {
-    let xy = getBaloonXY(bln);
+  //console.log(balloons.length);
+  Array.from(balloons).forEach( bln => {
+    let xy = getBalloonXY(bln);
     if (xy[1] <= blnStep) {
       bln.parentNode.removeChild(bln);
     } else if (!bln.classList.contains('pop')) { 
@@ -260,16 +260,16 @@ let assets = [
   '--neko-itch-2',
   '--neko-sleep-1',
   '--neko-sleep-2',
-  '--baloon-purple-1',
-  '--baloon-purple-2',
-  '--baloon-purple-3',
-  '--baloon-yellow-1',
-  '--baloon-yellow-2',
-  '--baloon-yellow-3',
-  '--baloon-white-1',
-  '--baloon-white-2',
-  '--baloon-white-3',
-  '--baloon-pop'
+  '--balloon-purple-1',
+  '--balloon-purple-2',
+  '--balloon-purple-3',
+  '--balloon-yellow-1',
+  '--balloon-yellow-2',
+  '--balloon-yellow-3',
+  '--balloon-white-1',
+  '--balloon-white-2',
+  '--balloon-white-3',
+  '--balloon-pop'
 ];
 // document.addEventListener('DOMContentLoaded', function () {
       
