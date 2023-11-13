@@ -3,8 +3,8 @@ neko.id = "neko";
 document.children[0].appendChild(neko);
 
 const step = 12;
-const blnStep = 6;
-const balloonFreq = 0.02;
+const blnStep = 4;
+const balloonFreq = 0.01;
 const spf = 100;
 const mouseRange = 6000;
 let posX, posY;
@@ -13,8 +13,8 @@ let state, boredom, fatigue;
 
 
 function nekoInit() {
-  posX = 100;
-  posY = 100;
+  posX = 100 + window.pageXOffset;
+  posY = 100 + window.pageYOffset;
   boredom = 0;
   fatigue = 0;
   state = "still";
@@ -132,11 +132,11 @@ function nekoLoop() {
       fatigue += spf;
       break;
    case "still":
-      if (fatigue > 12000 && boredom > 5000) {
+      if (fatigue > 15000 && boredom > 5000) {
         switchState("yawn");
       };
       if (boredom > 5000) {
-        if (balloons && Math.random() < .9) {
+        if (balloons && Math.random() < .8) {
           target = "";
           switchState("alert");
         } else {
@@ -145,7 +145,6 @@ function nekoLoop() {
       };
       break;
    case "itch": 
-      fatigue += spf;
       if (boredom > 3000) {
         switchState("still");
       }

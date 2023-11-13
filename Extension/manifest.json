@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Neko1111",
-  "version": "1.5",
+  "version": "2.0",
   "description": "meow",
   "icons": {
     "16": "icon16.png",
@@ -22,7 +22,7 @@
   "action": {},
   "content_security_policy": {},
   "web_accessible_resources": [{
-    "resources": ["nekos/*"],
+    "resources": ["nekos/*", "balloons/*"],
     "matches": ["<all_urls>"]
     }],
    "content_scripts": [
